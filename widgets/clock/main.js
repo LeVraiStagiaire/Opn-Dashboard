@@ -1,4 +1,10 @@
 export const __initialize__ = (widgetElem) => {
+
+    const stylesheet = document.createElement('link');
+    stylesheet.rel = 'stylesheet';
+    stylesheet.href = '/widgets/clock/style.css';
+    document.head.appendChild(stylesheet);
+
     const clockDiv = document.createElement('div');
     const hourHand = document.createElement('div');
     const minuteHand = document.createElement('div');

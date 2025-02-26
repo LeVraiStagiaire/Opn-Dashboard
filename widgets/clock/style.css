@@ -1,0 +1,44 @@
+.clock {
+    width: auto;
+    height: 90%;
+    max-width: 300px;
+    max-height: 300px;
+    border: 5px solid white;
+    border-radius: 50%;
+    position: relative;
+    aspect-ratio: 1/1;
+}
+
+.seconds-hand {
+    width: 50%;
+    height: 2px;
+    background: white;
+    position: absolute;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(0deg);
+    transition: transform 0.5s ease-in-out;
+}
+
+.minutes-hand {
+    width: 49%;
+    height: 3px;
+    background: white;
+    position: absolute;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(0deg);
+    transition: transform 0.5s ease-in-out;
+}
+
+.hours-hand {
+    width: 40%;
+    height: 5px;
+    background: white;
+    position: absolute;
+    top: 50%;
+    transform-origin: 100%;
+    left: 10%;
+    transform: rotate(0deg);
+    transition: transform 0.5s ease-in-out;
+}
