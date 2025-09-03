@@ -1,4 +1,4 @@
-export const __initialize__ = (widgetElem) => {
+export const __initialize__ = (widgetElem, props) => {
 
     const stylesheet = document.createElement('link');
     stylesheet.rel = 'stylesheet';
