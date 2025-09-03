@@ -12,7 +12,7 @@ Nous accueillons avec plaisir vos contributions : corrections, nouvelles fonctio
 
 ### 1. Signaler un problème
 
-* Vérifiez si le problème n’a pas déjà été signalé dans l’onglet [Issues]().
+* Vérifiez si le problème n’a pas déjà été signalé dans l’onglet [Issues](https://github.com/LeVraiStagiaire/Opn-Dashboard/issues).
 * Créez une nouvelle *issue* en décrivant :
   * le bug rencontré (avec captures si possible),
   * la version du navigateur / OS,
@@ -27,22 +27,31 @@ Nous accueillons avec plaisir vos contributions : corrections, nouvelles fonctio
 
 1. **Forkez** le dépôt et créez une branche (`git checkout -b feature/ma-fonction`).
 2. Développez vos changements dans du **JavaScript / HTML pur** (pas de frameworks lourds).
-3. Respectez la structure existante du projet :
-   * `/widgets` → widgets individuels,
-   * `/assets` → images, icônes,
-   * `/css` → styles,
-   * `/js` → scripts.
+3. Respectez la structure existante du projet
 4. Testez vos modifications sur plusieurs navigateurs.
 5. Ouvrez une PR avec :
    * une description claire,
    * la référence à l’*issue* associée si existante,
    * éventuellement des captures d’écran.
 
+### 4. Créer un widget communautaire
+
+Nous encourageons la création de widgets par la communauté !
+
+Pour que votre widget soit accepté :
+
+1. Créez un dossier dédié à votre widget qui accueillera les fichiers nécessaires.
+2. Respectez cette structure de nommage de fichiers :
+   * main.js pour les fonctions JavaScript
+   * style.css pour les feuilles de styles
+3. Documentez votre widget dans un fichier README.md.
+4. Testez-le dans différents environnements pour assurer une bonne compatibilité
+
 ---
 
 ## 🧹 Style de code
 
-* Utilisez une indentation de  **2 espaces** .
+* Utilisez une indentation de  **1 tabulation**.
 * Nommez les fichiers en anglais et en minuscules (`clock.js`, `weather-widget.js`).
 * Évitez les dépendances externes inutiles : le projet doit rester  **léger et portable** .
 * Commentez le code si nécessaire pour expliquer la logique.
@@ -60,4 +69,4 @@ Nous accueillons avec plaisir vos contributions : corrections, nouvelles fonctio
 
 ## 📜 Licence
 
-En contribuant, vous acceptez que votre code soit publié sous la licence du projet (MIT).
+En contribuant, vous acceptez que votre code soit publié sous la licence du projet (GPL-3.0).
