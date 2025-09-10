@@ -9,11 +9,13 @@ export const __initialize__ = (widgetElem, props) => {
     const hourHand = document.createElement('div');
     const minuteHand = document.createElement('div');
     const secondHand = document.createElement('div');
+    const centralDot = document.createElement('div');
 
     clockDiv.classList.add('clock');
     hourHand.classList.add('hours-hand');
     minuteHand.classList.add('minutes-hand');
     secondHand.classList.add('seconds-hand');
+    centralDot.classList.add('central-dot');
 
     clockDiv.id = 'clock';
     hourHand.id = 'hour-hand';
@@ -38,6 +40,7 @@ export const __initialize__ = (widgetElem, props) => {
     clockDiv.appendChild(hourHand);
     clockDiv.appendChild(minuteHand);
     clockDiv.appendChild(secondHand);
+    clockDiv.appendChild(centralDot);
 
     widgetElem.appendChild(clockDiv);
 }
