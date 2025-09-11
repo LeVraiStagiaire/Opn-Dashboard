@@ -1,4 +1,4 @@
-.clock {
+.analog-clock {
     width: auto;
     height: 90%;
     max-width: 300px;
@@ -52,4 +52,32 @@
     top: 51%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+@font-face {
+    font-family: 'Doto';
+    src: url(./assets/font/Doto-VariableFont_ROND\,wght.ttf) format('truetype');
+}
+
+.digital-clock {
+    font-size: 1.25em;
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    font-family: 'Doto', 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+}
+
+.time {
+    font-size: 3em;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.date {
+    font-size: 1.5em;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-top: 5px;
 }

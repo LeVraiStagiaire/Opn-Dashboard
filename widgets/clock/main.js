@@ -5,13 +5,21 @@ export const __initialize__ = (widgetElem, props) => {
     stylesheet.href = '/widgets/clock/style.css';
     document.head.appendChild(stylesheet);
 
+    if (props.display === 'digital') {
+        digitalClock(widgetElem);
+    } else {
+        analogClock(widgetElem);
+    }
+}
+
+const analogClock = (widgetElem) => {
     const clockDiv = document.createElement('div');
     const hourHand = document.createElement('div');
     const minuteHand = document.createElement('div');
     const secondHand = document.createElement('div');
     const centralDot = document.createElement('div');
 
-    clockDiv.classList.add('clock');
+    clockDiv.classList.add('analog-clock');
     hourHand.classList.add('hours-hand');
     minuteHand.classList.add('minutes-hand');
     secondHand.classList.add('seconds-hand');
@@ -43,4 +51,45 @@ export const __initialize__ = (widgetElem, props) => {
     clockDiv.appendChild(centralDot);
 
     widgetElem.appendChild(clockDiv);
+}
+
+const digitalClock = (widgetElem) => {
+    const clockDiv = document.createElement('div');
+    const timeSpan = document.createElement('span');
+    const dateSpan = document.createElement('span');
+
+    clockDiv.classList.add('digital-clock');
+    timeSpan.classList.add('time');
+    dateSpan.classList.add('date');
+    clockDiv.id = 'digital-clock';
+    timeSpan.id = 'time';
+    dateSpan.id = 'date';
+    timeSpan.innerText = '00:00:00';
+    dateSpan.innerText = 'Loading...';
+
+    clockDiv.appendChild(timeSpan);
+    clockDiv.appendChild(dateSpan);
+    widgetElem.appendChild(clockDiv);
+    updateTimeAndDate(timeSpan, dateSpan);
+    setInterval(() => {
+        updateTimeAndDate(timeSpan, dateSpan);
+    }, 1000);
+}
+
+const updateTimeAndDate = (timeSpan, dateSpan) => {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const year = now.getFullYear();
+
+    // Blink separators each second (visible on even seconds, hidden on odd)
+    const showSeparator = now.getSeconds() % 2 === 0;
+    const sep = showSeparator ? ':' : '&nbsp;';
+
+    // Use innerHTML so we can replace separators without affecting text nodes
+    timeSpan.innerHTML = `${hours}${sep}${minutes}${sep}${seconds}`;
+    dateSpan.innerText = `${day}/${month}/${year}`;
 }
